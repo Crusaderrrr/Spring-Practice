@@ -1,3 +1,6 @@
-com\nikita\app\controllers\FirstController.class
+com\nikita\app\controllers\PeopleController.class
+com\nikita\app\models\Person.class
 com\nikita\app\config\MySpringMvcDispatcherServletInitializer.class
+com\nikita\app\dao\PersonDAO.class
+com\nikita\app\controllers\FirstController.class
 com\nikita\app\config\SpringConfig.class
