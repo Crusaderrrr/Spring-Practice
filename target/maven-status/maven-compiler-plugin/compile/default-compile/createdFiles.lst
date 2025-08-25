@@ -1,0 +1,3 @@
+com\nikita\app\controllers\FirstController.class
+com\nikita\app\config\MySpringMvcDispatcherServletInitializer.class
+com\nikita\app\config\SpringConfig.class
