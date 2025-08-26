@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All People</title>
+    <meta charset="UTF-8">
+    <title>Index</title>
 </head>
 <body>
-  <div th:each="person : ${people}">
-    <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
-  </div>
 
-  <br/>
-  <hr/>
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
+</div>
 
-  <a href="/people/new">Create new person</a>
+<br/>
+<hr/>
+
+<a href="/people/new">Create new person</a>
+
 </body>
 </html>

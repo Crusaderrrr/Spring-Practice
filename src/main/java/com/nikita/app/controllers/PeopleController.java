@@ -3,6 +3,7 @@ package com.nikita.app.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nikita.app.dao.PersonDAO;
 import com.nikita.app.models.Person;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/people")
@@ -34,13 +37,15 @@ public class PeopleController {
   }
 
   @GetMapping("/new") 
-  public String newPerson(Model model) {
-    model.addAttribute("person", new Person());
+  public String newPerson(@ModelAttribute("person") Person person) {
     return "people/new";
   }
 
   @PostMapping()
-  public String create(@ModelAttribute("person") Person person) {
+  public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
+    if (bindingResult.hasErrors())
+      return "people/new";
+
     personDAO.save(person);
     return "redirect:/people";
   }
@@ -52,7 +57,10 @@ public class PeopleController {
   }
 
   @PatchMapping("/{id}")
-  public String update(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
+  public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id) {
+    if (bindingResult.hasErrors())
+      return "people/edit";
+
     personDAO.update(id, person);
     return "redirect:/people";
   }
