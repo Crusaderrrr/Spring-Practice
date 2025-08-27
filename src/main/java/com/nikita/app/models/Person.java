@@ -13,7 +13,7 @@ public class Person {
   private String name;
 
   @Min(value = 0, message = "Age should be greater than 0")
-  private Integer age;
+  private int age;
 
   @NotEmpty(message = "Email should not be empty")
   @Email(message = "Email should be valid")
@@ -21,18 +21,18 @@ public class Person {
 
   public Person(){}
   
-  public Person(int id, String name, int age, String email) {
+  public Person(int id, String name, Integer age, String email) {
     this.id = id;
     this.name = name;
     this.age = age;
     this.email = email;
   }
 
-  public int getAge() {
+  public Integer getAge() {
     return age;
   }
 
-  public void setAge(int age) {
+  public void setAge(Integer age) {
     this.age = age;
   }
 
