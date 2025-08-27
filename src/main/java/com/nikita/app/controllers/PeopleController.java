@@ -38,13 +38,13 @@ public class PeopleController {
 
   @GetMapping("/new") 
   public String newPerson(@ModelAttribute("person") Person person) {
-    return "people/newView";
+    return "people/new";
   }
 
   @PostMapping()
   public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
     if (bindingResult.hasErrors())
-      return "people/newView";
+      return "people/new";
 
     personDAO.save(person);
     return "redirect:/people";

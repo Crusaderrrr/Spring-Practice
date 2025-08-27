@@ -28,11 +28,11 @@ public class Person {
     this.email = email;
   }
 
-  public Integer getAge() {
+  public int getAge() {
     return age;
   }
 
-  public void setAge(Integer age) {
+  public void setAge(int age) {
     this.age = age;
   }
 

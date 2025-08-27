@@ -15,7 +15,6 @@
         <label for="age">Enter age: </label>
         <input type="number" th:field="*{age}" id="age"/>
         <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
-        <h1>HUY</h1>
       </div>
       <div>
         <label for="email">Enter email: </label>
