@@ -2,5 +2,6 @@ D:\Java\webapp\src\main\java\com\nikita\app\controllers\FirstController.java
 D:\Java\webapp\src\main\java\com\nikita\app\controllers\PeopleController.java
 D:\Java\webapp\src\main\java\com\nikita\app\dao\PersonDAO.java
 D:\Java\webapp\src\main\java\com\nikita\app\models\Person.java
+D:\Java\webapp\src\main\java\com\nikita\app\models\PersonMapper.java
 D:\Java\webapp\src\main\java\com\nikita\app\config\SpringConfig.java
 D:\Java\webapp\src\main\java\com\nikita\app\config\MySpringMvcDispatcherServletInitializer.java
